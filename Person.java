@@ -1,11 +1,11 @@
 package Final;
 
 public class Person {
-	private String ssn;
 	private String name;
+	private String ssn;
+	private String address;
 	private String gender;
 	private String phoneNumber;
-	private String address;
 	private int age;
 	
 	public static int numPersons;
@@ -15,71 +15,54 @@ public class Person {
 	}
 	
 	public Person(String name){
-		this();
-		setName(name);
+		this.name = name;
 	}
 	
-	public Person(String name, int age){
-		this(name);
-		setAge(age);
-		}
-	
-	public Person(String ssn, String name, int age){
-		this(name, age);
-		setSsn(ssn);
-	}
-	
-	public int getAge(){
-		return age;
-	}
-	
-	public void setAge(int age){
-		if(age > 0){
-			this.age = age;
-		}
-	}
-	
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 	
-	public void setName(String name){
-		if (!name.trim().isEmpty()){
-			this.name = name;
-		}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	public int getNumPersons(){
-		return numPersons;
+	public void getSsn() {
+		this.ssn = ssn;
 	}
-	
-	public String getSsn(){
+		
+	public String setSsn(String ssn){
 		return ssn;
 	}
 	
-	public void setSsn(String ssn){
-		if (!ssn.trim().isEmpty()){
-			this.ssn = ssn;
-		}
+	public String getAddress(){
+		return address;
 	}
 	
-	public static String status(){
-		return "I am a person.";
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
-	@Override
-	public boolean equals(Object obj){
-		boolean result = false;
-		if (obj instanceof Person){
-			if (getSsn() == ((Person) obj).getSsn()){
-				result = true;
-			}
-		}
-		return result;
+	public String getGender(){
+		return gender;
+	}
+			
+	public void setGender(String gender){
+		this.gender = gender;
 	}
 	
-	@Override
-	public String toString(){
-		return "Person [Name=" + getName() + ", Age=" +getAge() + "]";
+	public String getPhoneNumber(){
+		return phoneNumber;
+	}
+	
+	public void setPhoneNumber(String phoneNumber){
+		this.phoneNumber = phoneNumber;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 }

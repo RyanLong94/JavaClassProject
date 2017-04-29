@@ -3,6 +3,7 @@ package Final;
 public class Faculty extends Person{
 	private String jobTitle;
 	private String department;
+	private int salary;
 	private int numberOfClasses;
 	private boolean tenured;
 	
@@ -24,6 +25,14 @@ public class Faculty extends Person{
 
 	public void setDepartment(String department) {
 		this.department = department;
+	}
+	
+	public int getSalary() {
+		return salary;
+	}
+	
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
 
 	public int getNumberOfClasses() {
