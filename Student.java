@@ -9,25 +9,37 @@ public class Student extends Person{
 	public Student(){
 		super();
 	}
-	
-	public Student(String name){
-		super(name);
-		setClassLevel("Sophomore");
-	}
-	
-	public Student(String name, int age){
-		super(name, age);
-	}
-	
-	public Student(String ssn, String name, int age){
-		super(ssn, name, age);
-	}
-	
-	public String getVid(){
+
+	public String getVid() {
 		return vid;
 	}
-	
-	public void setVid(String vid){
-	
+
+	public void setVid(String vid) {
+		this.vid = vid;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	public String getClassLevel() {
+		return classLevel;
+	}
+
+	public void setClassLevel(String classLevel) {
+		this.classLevel = classLevel;
+	}
+
+	public Double getGpa() {
+		return gpa;
+	}
+
+	public void setGpa(Double gpa) {
+		this.gpa = gpa;
+	}
+
 }
-	
