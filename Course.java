@@ -1,23 +1,25 @@
 package Final;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Implement Course Class
 public class Course {
-	private String courseName;
-	private String department;
-	private String courseNumber;
-	private String instructor;
-	private int classSize;
 	
-	//Construct Course object with specified courseName, 
-			//department, courseNumber, instructor, classSize
+	//Define Course Variables
+	private String courseName;		//Name of the Course
+	private String department;		//Name of Department
+	private String courseNumber;	//Course Number
+	private Faculty instructor;		//Faculty teaching the course
+	public List<Student> students = new ArrayList<Student>();	//List of Students taking the Course
+	
+	//Construct Course object with specified courseName, department, courseNumber, instructor
 	public Course(String courseName, String department,
-			String courseNumber, String instructor, 
-			int classSize) {
+			String courseNumber, Faculty instructor ) {
 		this.courseName = courseName;
 		this.department = department;
 		this.courseNumber = courseNumber;
 		this.instructor = instructor;
-		this.classSize = classSize;
 	}
 	
 	public String getCourseName() {
@@ -38,24 +40,30 @@ public class Course {
 	public void setCourseNumber(String courseNumber) {
 		this.courseNumber = courseNumber;
 	}
-	public String getInstructor() {
+	public Faculty getInstructor() {
 		return instructor;
 	}
-	public void setInstructor(String instructor) {
+	public void setInstructor(Faculty instructor) {
 		this.instructor = instructor;
 	}
+	
+	/* Get the Number of Students Taking the Course
+	 */
 	public int getClassSize() {
-		return classSize;
+		return students.size();
 	}
-	public void setClassSize(int classSize) {
-		this.classSize = classSize;
+	
+	/* Add Student to the List of Students
+	 */
+	public void addStudent(Student student){
+		students.add(student);
 	}
 	
 	//Return a String description of the class
 	public String toString() {
 		return super.toString() + "\nCourseName: " + courseName + "\ndepartment: " 
 				+ department + "\nCourseNumber: " + courseNumber + 
-				"\nInstructor: " + instructor + "\nClassSize: " + 
-				classSize;
-		}
+				"\nInstructor: " + instructor.toString() + "\nClassSize: " + 
+				getClassSize();
+	}
 }

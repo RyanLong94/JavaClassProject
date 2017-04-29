@@ -61,7 +61,7 @@ public class Person {
 	
 	//Return a string description of the class
 	public String toString() {
-		return "\nName: " + name + "\nSsn: " + ssn + "\nAddress: " 
-				+ address + "\nGender: " + gender + "\nAge: " + age;
+		return("\nName: " + name + "\nSsn: " + ssn + "\nAddress: " 
+				+ address + "\nGender: " + gender + "\nAge: " + age);
 	}
 }
