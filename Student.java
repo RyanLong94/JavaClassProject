@@ -1,13 +1,22 @@
 package Final;
 
+//Implement Student Class with Person Extension
 public class Student extends Person{
 	private String vid;
 	private String major;
 	private String classLevel;
 	private Double gpa;
 	
-	public Student(){
-		super();
+	//Construct Student object with specified name, ssn, 
+	//address, gender, age, vid, major, classLevel, and gpa
+	public Student(String name, String ssn, String address, 
+			String gender, int age, String vid, String major, 
+			String classLevel, double gpa) {
+		super(name, ssn, address, gender, age);
+			this.vid = vid;
+			this.major = major;
+			this.classLevel = classLevel;
+			this.gpa = gpa;
 	}
 
 	public String getVid() {
@@ -26,10 +35,6 @@ public class Student extends Person{
 		this.major = major;
 	}
 
-	public String getClassLevel() {
-		return classLevel;
-	}
-
 	public void setClassLevel(String classLevel) {
 		this.classLevel = classLevel;
 	}
@@ -41,5 +46,10 @@ public class Student extends Person{
 	public void setGpa(Double gpa) {
 		this.gpa = gpa;
 	}
-
+	
+	//Return a String description of the class
+public String toString() {
+	return super.toString() + "\nVid: " + vid + "\nMajor: " + 
+			major + "\nClassLevel: " + classLevel + "\nGpa: " + gpa;
+}
 }

@@ -1,21 +1,22 @@
 package Final;
 
+//Implement Person class
 public class Person {
 	private String name;
 	private String ssn;
 	private String address;
 	private String gender;
-	private String phoneNumber;
 	private int age;
 	
-	public static int numPersons;
-	
-	public Person(){
-		numPersons++;
-	}
-	
-	public Person(String name){
+	//Construct Person object with specified name, ssn, 
+		//address, gender, and age
+	public Person(String name, String ssn, String address, 
+			String gender, int age){
 		this.name = name;
+		this.ssn = ssn;
+		this.address = address;
+		this.gender = gender;
+		this.age = age;
 	}
 	
 	public String getName() {
@@ -26,12 +27,12 @@ public class Person {
 		this.name = name;
 	}
 	
-	public void getSsn() {
-		this.ssn = ssn;
+	public String getSsn() {
+		return ssn;
 	}
 		
-	public String setSsn(String ssn){
-		return ssn;
+	public void setSsn(String ssn){
+		this.ssn = ssn;
 	}
 	
 	public String getAddress(){
@@ -49,14 +50,6 @@ public class Person {
 	public void setGender(String gender){
 		this.gender = gender;
 	}
-	
-	public String getPhoneNumber(){
-		return phoneNumber;
-	}
-	
-	public void setPhoneNumber(String phoneNumber){
-		this.phoneNumber = phoneNumber;
-	}
 
 	public int getAge() {
 		return age;
@@ -64,5 +57,11 @@ public class Person {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	//Return a string description of the class
+	public String toString() {
+		return "\nName: " + name + "\nSsn: " + ssn + "\nAddress: " 
+				+ address + "\nGender: " + gender + "\nAge: " + age;
 	}
 }

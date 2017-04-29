@@ -1,5 +1,6 @@
 package Final;
 
+//Implement Faculty Class with Person Extension
 public class Faculty extends Person{
 	private String jobTitle;
 	private String department;
@@ -7,8 +8,17 @@ public class Faculty extends Person{
 	private int numberOfClasses;
 	private boolean tenured;
 	
-	public Faculty(){
-		super();
+	//Construct Faculty object with specified name, ssn, 
+		//address, gender, age, jobTitle, department 
+		//salary, and numberOfClasses
+	public Faculty(String name, String ssn, String address, 
+			String gender, int age, String jobTitle, 
+			String department, int salary, int numberOfClasses){
+		super(name, ssn, address, gender, age);
+		this.jobTitle = jobTitle;
+		this.department = department;
+		this.salary = salary;
+		this.numberOfClasses = numberOfClasses;
 	}
 
 	public String getJobTitle() {
@@ -49,6 +59,13 @@ public class Faculty extends Person{
 
 	public void setTenured(boolean tenured) {
 		this.tenured = tenured;
+	}
+	
+	//Return a String description of the class
+	public String toString() {
+		return super.toString() + "\nJobTitle: " + jobTitle + 
+				"\nDepartment: " + department + "\nSalary: " + 
+				salary + "\nNumberOfClasses: " + numberOfClasses;
 	}
 
 }
