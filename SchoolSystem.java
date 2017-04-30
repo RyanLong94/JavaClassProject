@@ -9,8 +9,7 @@ public class SchoolSystem {
 		// Create a Person, Student, Faculty, and Course objects
 		Person person = new Person("Jenny", "123-45-6789", "456 Main St", "female", 23);
 
-		Student student = new Student("Mary", "123-45-6789", "123 Main St", 
-			"female", 22, "V123456789", "Business", "Junior", 3.4);
+		Student student = getStudentByPrompt();
 
 		Faculty faculty = new Faculty("Mike", "987-65-4321", "34 West street", "male", 49,
 			"Professor", "Science", 60000, 3);
@@ -24,7 +23,7 @@ public class SchoolSystem {
 		System.out.println(course.toString());
 	}
 
-	private Student getStudentByPrompt(){
+	private static Student getStudentByPrompt(){
 		
 		//Define Local Variables
 		String name, ssn, address, gender, vid, major, classStanding;
@@ -36,7 +35,7 @@ public class SchoolSystem {
 		//Get user input string for name
 		System.out.println("Enter the Student's Name: ");
 		name = scanner.nextLine();	
-		
+
 		//Get user input string for social security
 		System.out.println("Enter the Student's Social Security Number: ");
 		ssn = scanner.nextLine();
@@ -44,7 +43,7 @@ public class SchoolSystem {
 		//Get user input string for address
 		System.out.println("Enter the Student's Address: ");
 		address = scanner.nextLine();	
-
+		
 		//Get user input string for gender
 		System.out.println("Enter the Student's Gender: ");
 		gender = scanner.nextLine();	
@@ -52,6 +51,7 @@ public class SchoolSystem {
 		//Get user input string for age
 		System.out.println("Enter the Student's Age: ");
 		age = scanner.nextInt();	
+		scanner.nextLine();  // This is necessary to read new line character, prevents skipping
 
 		//Get user input string for VID
 		System.out.println("Enter the Student's Valencia ID: ");
@@ -66,9 +66,11 @@ public class SchoolSystem {
 		classStanding = scanner.nextLine();	
 
 		//Get user input string for GPA
-		System.out.println("Enter the Student's Class Standing: ");
+		System.out.println("Enter the Student's GPA: ");
 		gpa = scanner.nextDouble();	
+		scanner.nextLine();  // This is necessary to read new line character, prevents skipping
 
+		
 		//Return Student Object
 		return new Student(name, ssn, address, gender, age, vid, major, classStanding, gpa);
 	}
