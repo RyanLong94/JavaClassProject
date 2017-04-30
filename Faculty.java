@@ -91,4 +91,9 @@ public class Faculty extends Person{
 				salary + "\nNumberOfClasses: " + numberOfClasses;
 	}
 
+	public static String nextLine() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

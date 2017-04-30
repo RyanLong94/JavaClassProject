@@ -2,12 +2,11 @@ package Final;
 
 import java.util.Scanner;
 
+import javax.swing.text.html.ListView;
+
 public class SchoolSystem {
 
 	public static void main(String[] args) {
-		
-		// Create a Person, Student, Faculty, and Course objects
-		//Person person = new Person("Jenny", "123-45-6789", "456 Main St", "female", 23);
 
 		//Create Student variable
 		Student student = getStudentByPrompt();
@@ -16,16 +15,16 @@ public class SchoolSystem {
 		Faculty faculty = getFacultyByPrompt();
 
 		//Create course
-		Course course = new Course("Marketing 101", "Business", "MAK1011", faculty);
+		Course course = getCourseByPrompt();
 		
 		//Add student to course
 		course.addStudent(student);
 
 		// Invoke toString of Person, Student, Faculty and Course
-		//System.out.println(person.toString());
-		System.out.println(student.toString());
-		System.out.println(faculty.toString());
-		System.out.println(course.toString());
+		System.out.println(student.toString() + "\n");
+		System.out.println(faculty.toString() + "\n");
+		System.out.println(course.toString() + "\n");
+		
 	}
 
 	private static Student getStudentByPrompt(){
@@ -125,5 +124,37 @@ public class SchoolSystem {
 		//Return Person Object
 		return new Person(name, ssn, address, gender, age);
 	}
+	
+		private static Course getCourseByPrompt(){
+			
+			//Define Local Variables
+			String courseName, department, instructor;
+			String courseNumber;
+			ListView students;
+			Scanner scanner = new Scanner(System.in);
+			
+			//Get user input string for course
+			System.out.println("Enter the Course Name: ");
+			courseName = scanner.next();
+			
+			//Get user input String for courseNumber
+			System.out.println("Enter the Course Number: ");
+			courseNumber = scanner.nextLine();
+			
+			//Get user input String for department
+			System.out.println("Enter the department the class is in: ");
+			department = scanner.nextLine();
+			
+			//Get user input Faculty for instructor
+			System.out.println("Enter the name of the instructor: ");
+			instructor = Faculty.nextLine();
+			
+			//Get user input String for number of students
+			System.out.println("Enter number of students in the class: ");
+			students = ListView.size();
+			
+			return new Course(courseName, courseNumber, department, instructor, students);
+			
+		}
 
 }
