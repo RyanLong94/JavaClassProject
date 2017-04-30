@@ -13,10 +13,10 @@ public class Student extends Person{
 			String classLevel, double gpa) {
 		super(person.getName(), person.getSsn(), person.getAddress(), 
 				person.getGender(), person.getAge());
-			this.vid = vid;
-			this.major = major;
-			this.classLevel = classLevel;
-			setGpa(gpa);
+			this.vid = vid;					//Student's Valencia ID Number
+			this.major = major;				//Sudent's Major
+			this.classLevel = classLevel;	//Student's classLevel
+			setGpa(gpa);					// Student's GPA
 	}
 
 	public String getVid() {

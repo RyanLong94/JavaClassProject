@@ -55,7 +55,6 @@ public class SchoolSystem {
 		gpa = scanner.nextDouble();	
 		scanner.nextLine();  // This is necessary to read new line character, prevents skipping
 
-		
 		//Return Student Object
 		return new Student(person, vid, major, classStanding, gpa);
 	}
@@ -124,7 +123,7 @@ public class SchoolSystem {
 		System.out.println("Enter the Person's Age: ");
 		age = scanner.nextInt();	
 		scanner.nextLine();  // This is necessary to read new line character, prevents skipping
-
+		
 		//Return Person Object
 		return new Person(name, ssn, address, gender, age);
 	}
@@ -136,6 +135,9 @@ public class SchoolSystem {
 			Faculty instructor;
 			int numStudents;
 			Scanner scanner = new Scanner(System.in);
+			
+			//Prompt user for Course Information and retrieve info from user input
+			System.out.println("PLEASE ENTER THE COURSE INFORMATION BELOW: ");
 			
 			//Get user input string for course
 			System.out.println("Enter the Course Name: ");
@@ -156,6 +158,9 @@ public class SchoolSystem {
 			System.out.println("Enter number of students in the class: ");
 			numStudents = scanner.nextInt();	
 			scanner.nextLine();  // This is necessary to read new line character, prevents skipping
+			
+			//closes the scanner
+			scanner.close();
 			
 			return new Course(courseName, courseNumber, department, instructor);
 			

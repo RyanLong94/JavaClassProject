@@ -11,11 +11,11 @@ public class Person {
 	//Construct Person object with specified name, ssn, 
 		//address, gender, and age
 	public Person(String name, String ssn, String address, String gender, int age){
-		this.name = name;
-		this.ssn = ssn;
-		this.address = address;
-		this.gender = gender;
-		setAge(age);
+		this.name = name;			//Person's name
+		this.ssn = ssn;				//Person'n Social Security Number
+		this.address = address;		//Person's Address
+		this.gender = gender;		//Person's Gender
+		setAge(age);				//Person's Age
 	}
 	
 	public String getName() {
