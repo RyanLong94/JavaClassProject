@@ -36,6 +36,7 @@ public class SchoolSystem {
 		Scanner scanner = new Scanner(System.in);
 		
 		//Prompt user for Student's Information and retrieve info from user input
+		System.out.println("PLEASE ENTER THE STUDENT'S INFORMATION BELOW: ");
 		
 		//Get user input string for VID
 		System.out.println("Enter the Student's Valencia ID: ");
@@ -69,6 +70,7 @@ public class SchoolSystem {
 		Scanner scanner = new Scanner(System.in);
 		
 		//Prompt user for Student's Information and retrieve info from user input
+		System.out.println("PLEASE ENTER THE FACULTY'S INFORMATION BELOW: ");
 		
 		//Get user input string for Job Title
 		System.out.println("Enter the Faculty's Job Title: ");
@@ -100,6 +102,8 @@ public class SchoolSystem {
 		Scanner scanner = new Scanner(System.in);
 		
 		//Prompt user for Person's Information and retrieve info from user input
+		System.out.println("PLEASE ENTER THE PERSON'S INFORMATION BELOW: ");
+		
 		//Get user input string for name
 		System.out.println("Enter the Person's Name: ");
 		name = scanner.nextLine();	
@@ -128,14 +132,14 @@ public class SchoolSystem {
 		private static Course getCourseByPrompt(){
 			
 			//Define Local Variables
-			String courseName, department, instructor;
-			String courseNumber;
-			ListView students;
+			String courseName, department, courseNumber;
+			Faculty instructor;
+			int numStudents;
 			Scanner scanner = new Scanner(System.in);
 			
 			//Get user input string for course
 			System.out.println("Enter the Course Name: ");
-			courseName = scanner.next();
+			courseName = scanner.nextLine();
 			
 			//Get user input String for courseNumber
 			System.out.println("Enter the Course Number: ");
@@ -146,14 +150,14 @@ public class SchoolSystem {
 			department = scanner.nextLine();
 			
 			//Get user input Faculty for instructor
-			System.out.println("Enter the name of the instructor: ");
-			instructor = Faculty.nextLine();
+			instructor = getFacultyByPrompt();
 			
 			//Get user input String for number of students
 			System.out.println("Enter number of students in the class: ");
-			students = ListView.size();
+			numStudents = scanner.nextInt();	
+			scanner.nextLine();  // This is necessary to read new line character, prevents skipping
 			
-			return new Course(courseName, courseNumber, department, instructor, students);
+			return new Course(courseName, courseNumber, department, instructor);
 			
 		}
 
