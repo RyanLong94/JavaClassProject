@@ -12,10 +12,10 @@ public class Faculty extends Person{
 	//Construct Faculty object with specified name, ssn, 
 		//address, gender, age, jobTitle, department 
 		//salary, and numberOfClasses
-	public Faculty(String name, String ssn, String address, 
-			String gender, int age, String jobTitle, 
-			String department, int salary, int numberOfClasses){
-		super(name, ssn, address, gender, age);
+	public Faculty(Person person, String jobTitle, 
+			String department, double salary, int numberOfClasses){
+		super(person.getName(), person.getSsn(), person.getAddress(), 
+				person.getGender(), person.getAge());
 		this.jobTitle = jobTitle;
 		this.department = department;
 		this.salary = salary;

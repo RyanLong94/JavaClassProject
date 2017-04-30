@@ -9,10 +9,10 @@ public class Student extends Person{
 	
 	//Construct Student object with specified name, ssn, 
 	//address, gender, age, vid, major, classLevel, and gpa
-	public Student(String name, String ssn, String address, 
-			String gender, int age, String vid, String major, 
+	public Student(Person person, String vid, String major, 
 			String classLevel, double gpa) {
-		super(name, ssn, address, gender, age);
+		super(person.getName(), person.getSsn(), person.getAddress(), 
+				person.getGender(), person.getAge());
 			this.vid = vid;
 			this.major = major;
 			this.classLevel = classLevel;

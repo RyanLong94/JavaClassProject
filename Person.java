@@ -10,8 +10,7 @@ public class Person {
 	
 	//Construct Person object with specified name, ssn, 
 		//address, gender, and age
-	public Person(String name, String ssn, String address, 
-			String gender, int age){
+	public Person(String name, String ssn, String address, String gender, int age){
 		this.name = name;
 		this.ssn = ssn;
 		this.address = address;
