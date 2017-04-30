@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class SchoolSystem {
 
-	
 	public static void main(String[] args) {
 		
 		// Create a Person, Student, Faculty, and Course objects
@@ -23,5 +22,54 @@ public class SchoolSystem {
 		System.out.println(student.toString());
 		System.out.println(faculty.toString());
 		System.out.println(course.toString());
+	}
+
+	private Student getStudentByPrompt(){
+		
+		//Define Local Variables
+		String name, ssn, address, gender, vid, major, classStanding;
+		double gpa;
+		int age;
+		Scanner scanner = new Scanner(System.in);
+		
+		//Prompt user for Student's Information and retrieve info from user input
+		//Get user input string for name
+		System.out.println("Enter the Student's Name: ");
+		name = scanner.nextLine();	
+		
+		//Get user input string for social security
+		System.out.println("Enter the Student's Social Security Number: ");
+		ssn = scanner.nextLine();
+		
+		//Get user input string for address
+		System.out.println("Enter the Student's Address: ");
+		address = scanner.nextLine();	
+
+		//Get user input string for gender
+		System.out.println("Enter the Student's Gender: ");
+		gender = scanner.nextLine();	
+
+		//Get user input string for age
+		System.out.println("Enter the Student's Age: ");
+		age = scanner.nextInt();	
+
+		//Get user input string for VID
+		System.out.println("Enter the Student's Valencia ID: ");
+		vid = scanner.nextLine();	
+
+		//Get user input string for Major
+		System.out.println("Enter the Student's Major: ");
+		major = scanner.nextLine();	
+
+		//Get user input string for Class Standing
+		System.out.println("Enter the Student's Class Standing: ");
+		classStanding = scanner.nextLine();	
+
+		//Get user input string for GPA
+		System.out.println("Enter the Student's Class Standing: ");
+		gpa = scanner.nextDouble();	
+
+		//Return Student Object
+		return new Student(name, ssn, address, gender, age, vid, major, classStanding, gpa);
 	}
 }

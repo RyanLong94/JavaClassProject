@@ -16,7 +16,7 @@ public class Student extends Person{
 			this.vid = vid;
 			this.major = major;
 			this.classLevel = classLevel;
-			this.gpa = gpa;
+			setGpa(gpa);
 	}
 
 	public String getVid() {
@@ -43,13 +43,24 @@ public class Student extends Person{
 		return gpa;
 	}
 
+	/* Set the Student's GPA
+	 * 
+	 * @param gpa This is the GPA of the student
+	 */
 	public void setGpa(Double gpa) {
+		
+		//If GPA is less than 0, set to 0
+		if(gpa < 0.0){
+			gpa = 0.0;
+		}
+		
+		//Set GPA 
 		this.gpa = gpa;
 	}
 	
 	//Return a String description of the class
-public String toString() {
-	return super.toString() + "\nVid: " + vid + "\nMajor: " + 
-			major + "\nClassLevel: " + classLevel + "\nGpa: " + gpa;
-}
+	public String toString() {
+		return super.toString() + "\nVid: " + vid + "\nMajor: " + 
+				major + "\nClassLevel: " + classLevel + "\nGpa: " + gpa;
+	}
 }

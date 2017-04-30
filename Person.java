@@ -16,7 +16,7 @@ public class Person {
 		this.ssn = ssn;
 		this.address = address;
 		this.gender = gender;
-		this.age = age;
+		setAge(age);
 	}
 	
 	public String getName() {
@@ -55,7 +55,18 @@ public class Person {
 		return age;
 	}
 
+	/* Set the Age of the person
+	 * 
+	 * @param age This is the age of the persons
+	 */
 	public void setAge(int age) {
+		
+		//If age is less than 0, then set to 0
+		if(age < 0){
+			age = 0;
+		}
+		
+		//Set the age
 		this.age = age;
 	}
 	

@@ -2,10 +2,11 @@ package Final;
 
 //Implement Faculty Class with Person Extension
 public class Faculty extends Person{
+	
 	private String jobTitle;
 	private String department;
-	private int salary;
-	private int numberOfClasses;
+	private double salary;
+	private int numberOfClasses;	//Number of Classes taught by Faculty
 	private boolean tenured;
 	
 	//Construct Faculty object with specified name, ssn, 
@@ -37,11 +38,22 @@ public class Faculty extends Person{
 		this.department = department;
 	}
 	
-	public int getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 	
-	public void setSalary(int salary) {
+	/* Set the Salary for the Faculty
+	 * 
+	 * @param salary This is the salary of the faculty
+	 */
+	public void setSalary(double salary) {
+		
+		//If Salary is less than zero, set to zero
+		if(salary < 0.0){
+			salary = 0.0;
+		}
+		
+		//Set the salary
 		this.salary = salary;
 	}
 
@@ -49,7 +61,18 @@ public class Faculty extends Person{
 		return numberOfClasses;
 	}
 
+	/* Set the Number of Classes taught by the Faculty
+	 * 
+	 * @param numberOfClasses Number of classes that the faculty teaches
+	 */
 	public void setNumberOfClasses(int numberOfClasses) {
+		
+		//If Number of Classes is less than zero, set to zero
+		if(numberOfClasses < 0){
+			numberOfClasses = 0;
+		}
+		
+		//Set the Number of Classes
 		this.numberOfClasses = numberOfClasses;
 	}
 
